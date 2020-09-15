@@ -24,20 +24,44 @@ To install the plugin, follow these instructions.
 
 ## VAT Checker Overview
 
--Insert text here-
-
-## Configuring VAT Checker
-
--Insert text here-
+Custom field to use in craft to get a valid European VAT number. You can use this also in twig if you want to hardcode a value. You can also receive the company info from the VAT in the twig filter.
 
 ## Using VAT Checker
 
--Insert text here-
+### Custom field
+
+Create a new field by selecting VAT Field on the dropdown. No need to add extra info
+
+### Twig filter
+
+You can use the `|vat` filter to format a VAT number. If you want company info add `info` as param to the function
+
+```twig
+{{ entry.vatField|vat }}
+{# Output: 1|0 --> depending on if it's valid or not #}
+
+{{ entry.myIban|iban('info') }}
+{# Output: "
+  object(stdClass)[1591]
+    public 'valid' => boolean true
+    public 'countryCode' => string 'BE' (length=2)
+    public 'vatNumber' => string '0688696733' (length=10)
+    public 'name' => string 'BVBA KOEKETIENE DESIGN' (length=22)
+    public 'address' =>
+      object(stdClass)[1598]
+        public 'street' => string 'Kanunnikenstraat(mar)' (length=21)
+        public 'number' => string '8' (length=1)
+        public 'zip_code' => string '8510' (length=4)
+        public 'city' => string 'Kortrijk' (length=8)
+        public 'country' => string 'België' (length=7)
+        public 'countryCode' => string 'BE' (length=2)
+    public 'strAddress' => string 'Kanunnikenstraat(Mar) 8
+  8510 Kortrijk' (length=37)
+" #}
+```
 
 ## VAT Checker Roadmap
 
-Some things to do, and ideas for potential features:
-
-* Release it
+None at this moment. All suggestions are welcome
 
 Brought to you by [Stefanie Gevaert](https://koeketienedesign.be/)
