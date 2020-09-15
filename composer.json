@@ -1,0 +1,46 @@
+{
+    "name": "koeketienedesign/vat-checker",
+    "description": "Validates and returns company info of VAT Number in Europe",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "vat checker"
+    ],
+    "support": {
+        "docs": "https://github.com/KoeketieneDesign/vat-checker/blob/master/README.md",
+        "issues": "https://github.com/KoeketieneDesign/vat-checker/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stefanie Gevaert",
+            "homepage": "https://koeketienedesign.be/"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0"
+    },
+    "require-dev": {
+      "craftcms/cms": "^3.2.0",
+      "codeception/codeception": "^3.0",
+      "vlucas/phpdotenv": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "koeketienedesign\\vatchecker\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "VAT Checker",
+        "handle": "vat-checker",
+        "developer": "Stefanie Gevaert",
+        "developerUrl": "https://koeketienedesign.be/",
+        "documentationUrl": "https://github.com/KoeketieneDesign/vat-checker/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/KoeketieneDesign/vat-checker/master/CHANGELOG.md",
+        "class": "koeketienedesign\\vatchecker\\VatChecker"
+    }
+}
