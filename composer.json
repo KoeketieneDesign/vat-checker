@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-          "vatchecker\\vatchecker\\": "src/"
+          "koeketienedesign\\vatchecker\\": "src/"
         }
     },
     "extra": {
@@ -41,6 +41,6 @@
         "developerUrl": "https://koeketienedesign.be/",
         "documentationUrl": "https://github.com/KoeketieneDesign/vat-checker/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/KoeketieneDesign/vat-checker/master/CHANGELOG.md",
-        "class": "vatchecker\\vatchecker\\VatChecker"
+        "class": "koeketienedesign\\vatchecker\\VatChecker"
     }
 }

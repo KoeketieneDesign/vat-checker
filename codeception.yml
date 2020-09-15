@@ -32,7 +32,7 @@ modules:
       migrations: []
       plugins:
         vat-checker:
-          class: '\vatchecker\vatchecker\VatChecker'
+          class: '\koeketienedesign\vatchecker\VatChecker'
           handle: vat-checker
       cleanup: true
       transaction: true

@@ -1,6 +1,6 @@
 <?php
 
-namespace vatchecker\vatcheckertests\acceptance;
+namespace koeketienedesign\vatcheckertests\acceptance;
 
 use Craft;
 use FunctionalTester;

@@ -8,12 +8,12 @@
  * @copyright Copyright (c) 2020 Stefanie Gevaert
  */
 
-namespace vatchecker\vatcheckertests\unit;
+namespace koeketienedesign\vatcheckertests\unit;
 
 use Codeception\Test\Unit;
 use UnitTester;
 use Craft;
-use vatchecker\vatchecker\VatChecker;
+use koeketienedesign\vatchecker\VatChecker;
 
 /**
  * ExampleUnitTest

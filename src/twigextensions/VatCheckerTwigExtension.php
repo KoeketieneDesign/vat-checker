@@ -1,4 +1,5 @@
 <?php
+
 /**
  * VAT Checker plugin for Craft CMS 3.x
  *
@@ -8,9 +9,10 @@
  * @copyright Copyright (c) 2020 Stefanie Gevaert
  */
 
-namespace vatchecker\vatchecker\twigextensions;
+namespace koeketienedesign\vatchecker\twigextensions;
 
-use vatchecker\vatchecker\VatChecker;
+use koeketienedesign\vatchecker\VatChecker;
+use koeketienedesign\vatchecker\services\Vatvalidator as VatvalidatorService;
 
 use Craft;
 
@@ -31,58 +33,34 @@ use Twig\TwigFunction;
  */
 class VatCheckerTwigExtension extends AbstractExtension
 {
-    // Public Methods
-    // =========================================================================
+  // Public Methods
+  // =========================================================================
+  public function getName()
+  {
+    return 'VAT Checker';
+  }
 
-    /**
-     * Returns the name of the extension.
-     *
-     * @return string The extension name
-     */
-    public function getName()
-    {
-        return 'VatChecker';
+  public function getFilters()
+  {
+    return [
+      new TwigFilter('vat', [$this, 'vat']),
+    ];
+  }
+
+  public function vat($value = null, $format = 'validate')
+  {
+    // validate or info
+    $result = "";
+
+    $vatValidatorHelper = new VatvalidatorService();
+
+    $vatValidation = $vatValidatorHelper->validateVat($value);
+    $result = $vatValidation->valid;
+
+    if('validate' !== $format){
+      $result = $vatValidation;
     }
 
-    /**
-     * Returns an array of Twig filters, used in Twig templates via:
-     *
-     *      {{ 'something' | someFilter }}
-     *
-     * @return array
-     */
-    public function getFilters()
-    {
-        return [
-            new TwigFilter('someFilter', [$this, 'someInternalFunction']),
-        ];
-    }
-
-    /**
-     * Returns an array of Twig functions, used in Twig templates via:
-     *
-     *      {% set this = someFunction('something') %}
-     *
-    * @return array
-     */
-    public function getFunctions()
-    {
-        return [
-            new TwigFunction('someFunction', [$this, 'someInternalFunction']),
-        ];
-    }
-
-    /**
-     * Our function called via Twig; it can do anything you want
-     *
-     * @param null $text
-     *
-     * @return string
-     */
-    public function someInternalFunction($text = null)
-    {
-        $result = $text . " in the way";
-
-        return $result;
-    }
+    return $result;
+  }
 }
