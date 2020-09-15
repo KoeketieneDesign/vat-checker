@@ -2,7 +2,7 @@
 
 Validates and returns company info of VAT Number in Europe
 
-![Screenshot](resources/img/plugin-logo.png | width=150)
+![Screenshot](resources/img/plugin-logo.png)
 
 ## Requirements
 
