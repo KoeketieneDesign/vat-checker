@@ -34,7 +34,7 @@ Create a new field by selecting VAT Field on the dropdown. No need to add extra 
 
 ### Twig filter
 
-You can use the `|vat` filter to format a VAT number. If you want company info add `info` as param to the function
+You can use the `|vat` filter to validate a VAT number. If you want company info add `info` as param to the function
 
 ```twig
 {{ entry.vatField|vat }}
