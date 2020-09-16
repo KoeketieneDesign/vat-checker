@@ -40,7 +40,7 @@ You can use the `|vat` filter to validate a VAT number. If you want company info
 {{ entry.vatField|vat }}
 {# Output: 1|0 --> depending on if it's valid or not #}
 
-{{ entry.myIban|vat('info') }}
+{{ entry.vatField|vat('info') }}
 {# Output: "
   object(stdClass)[1591]
     public 'valid' => boolean true
