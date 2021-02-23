@@ -1,5 +1,5 @@
 {
-    "name": "cookie10codes/vat-checker",
+    "name": "koeketienedesign/vat-checker",
     "description": "Validates and returns company info of VAT Number in Europe",
     "type": "craft-plugin",
     "version": "1.0.1",
